@@ -29,7 +29,6 @@ jobs:
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-        run: echo steps.publish.outputs
 
       - if: steps.publish.outputs.type != 'none'
         run: |

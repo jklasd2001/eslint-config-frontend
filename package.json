@@ -1,6 +1,6 @@
 {
   "name": "@jklasd2001/eslint-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Typescript React ESLint Config",
   "main": "index.js",
   "license": "MIT",
