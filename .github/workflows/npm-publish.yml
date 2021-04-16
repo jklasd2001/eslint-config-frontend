@@ -19,7 +19,7 @@ jobs:
        - id: publish
        - uses: actions/checkout@v1
        - uses: JS-DevTools/npm-publish@v1
-          with:
+         with:
             token: ${{ secrets.NPM_TOKEN }}
 
        - if: steps.publish.outputs.type != 'none'
