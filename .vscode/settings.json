@@ -11,6 +11,7 @@
         "yaml",
         "json",
     ],
+    "eslint.packageManager": "yarn",
     "npm.packageManager": "yarn",
     "files.exclude": {
         "**/dist": true,
