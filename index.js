@@ -5,19 +5,9 @@ module.exports = {
     jest: true,
     node: true,
   },
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:prettier/recommended',
-    'plugin:json/recommended',
-    'plugin:yaml/recommended',
-  ],
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    sourceType: 'module',
-  },
   plugins: [
-    '@typescript-eslint/eslint-plugin',
+    '@typescript-eslint',
     'import',
     'prettier',
     'react',
@@ -25,7 +15,29 @@ module.exports = {
     'unused-imports',
     'yaml',
   ],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+    'plugin:json/recommended',
+    'plugin:yaml/recommended',
+  ],
+  parserOptions: {
+    sourceType: 'module',
+  },
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        printWidth: 100,
+        semi: false,
+        singleQuote: true,
+        tabWidth: 2,
+        trailingComma: 'all',
+        endOfLine: 'auto',
+      },
+    ],
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': [
@@ -47,17 +59,6 @@ module.exports = {
     'import/no-unresolved': 'error',
     'no-console': 'warn',
     'no-unused-vars': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        printWidth: 100,
-        semi: false,
-        singleQuote: true,
-        tabWidth: 2,
-        trailingComma: 'all',
-        endOfLine: 'auto',
-      },
-    ],
     'react/react-in-jsx-scope': 'off',
     'react-hooks/exhaustive-deps': 'off',
     'react-hooks/rules-of-hooks': 'warn',
@@ -72,10 +73,6 @@ module.exports = {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
-      typescript: {},
-    },
-    react: {
-      version: 'detect',
     },
   },
 }
